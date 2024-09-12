@@ -1,0 +1,301 @@
+
+
+/* Start:/bitrix/components/vladrix/basket.page/templates/.default/style.css?16472029893975*/
+.text-right {
+    text-align: right;
+}
+
+.inline-b-middle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.basket {
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.basket .form-control {
+    color: #333;
+    line-height: 1;
+    padding: 8px;
+    vertical-align: middle;
+    max-width: 100%;
+    border: 1px solid #c7c7c7;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: inherit;
+}
+
+.basket__total {
+}
+
+.basket__buttons {
+    text-align: center;
+}
+
+.basket__btn {
+    cursor: pointer;
+    background-color: transparent;
+    color: #333 !important;
+    display: inline-block;
+    line-height: 1.3;
+    font-size: 14px;
+    padding: 13px 1.5rem;
+    border: 2px solid transparent;
+    text-decoration: none !important;
+    outline: none !important;
+    vertical-align: middle;
+    text-align: center;
+    user-select: none;
+}
+
+.basket__btn:hover {
+    box-shadow: 2px 2px 12px #666;
+}
+
+.basket__btn--primary {
+    border-color: #333;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.basket__btn--secondary {
+    font-weight: 500;
+    text-transform: uppercase;
+    background: #eaeaea;
+}
+
+.basket__title-col {
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.basket__item {
+    display: flex;
+    padding: 1rem .5rem;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    transition: opacity ease 400ms;
+}
+
+.basket__item--head {
+    border-bottom: 0;
+}
+
+.basket__item-pic {
+    flex: 0 1 100px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.basket__item-info {
+    flex: 1 1 500px;
+    padding: 0px 15px;
+}
+
+.basket__item-chars {
+    font-size: 13px;
+    color: #888;
+}
+
+.basket__item-name {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.basket__item-name:hover {
+    text-decoration: underline;
+}
+
+.basket__item-price {
+    color: #555;
+    flex: 0 1 150px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.basket__item-quantity {
+    flex: 0 1 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.basket__item-quantity-input {
+    width: 70px;
+    text-align: center;
+}
+
+.basket__item-quantity-inc,
+.basket__item-quantity-dec {
+    padding: 7px;
+}
+
+.basket__item-total {
+    color: #555;
+    flex: 0 1 180px;
+    min-width: 105px;
+    text-align: right;
+}
+
+.basket__item-remove {
+    flex: 0 0 30px;
+    cursor: pointer;
+    text-align: right;
+}
+
+.basket__total {
+    font-weight: bold;
+    background: #eaeaea;
+    padding: 1rem 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.basket__total > * {
+    margin-right: 15px;
+    padding-left: 15px;
+}
+
+.basket__total > *:not(:first-child) {
+    border-left: 1px solid;
+}
+
+.basket__total-price {
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 5px;
+}
+
+
+@media (min-width: 576px) {
+    .basket__item:not(:first-child) .basket__title-col {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .basket {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 767px) {
+    .basket {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 575px) {
+    .basket__item {
+        flex-wrap: wrap;
+    }
+
+    .basket__item--head {
+        display: none;
+    }
+
+    .basket__item-pic {
+        flex: 0 0 25%;
+    }
+
+    .basket__item-info {
+        flex: 1 1 70%;
+        padding: 0 0 20px 5%;
+    }
+
+    .basket__item-price {
+        flex: 0 0 50%;
+        text-align: left;
+        padding: 10px;
+    }
+
+    .basket__item-quantity {
+        flex: 0 0 50%;
+        justify-content: flex-end;
+    }
+
+    .basket__item-total {
+        padding: 15px 10px;
+        flex: 1 0 auto;
+        text-align: left;
+    }
+}
+/* End */
+
+
+/* Start:/bitrix/components/vladrix/basket.checkout/templates/.default/style.css?16472029891241*/
+.vxPopup-checkout {
+    display: block;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    padding: 1.25rem 1.25rem 2rem;
+    max-width: 500px;
+    width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vxPopup-checkout .form-control {
+    width: 95%;
+    font-size: 16px;
+    color: #333;
+    line-height: 1;
+    padding: 8px;
+    vertical-align: middle;
+    max-width: 100%;
+    border: 1px solid #c7c7c7;
+    font-weight: 400;
+    font-family: inherit;
+}
+
+.vxPopup-checkout__title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    padding-top: 5px;
+    position: relative;
+    text-align: center;
+}
+
+.vxPopup-checkout__title:after {
+    border-radius: 2px;
+    content: '';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75px;
+    height: 4px;
+    background: #cecece;
+    margin-top: 10px;
+}
+
+.vxPopup-checkout__text {
+    text-align: center;
+}
+
+.vxPopup-checkout__text p {
+    margin-bottom: 10px !important;
+}
+
+.vxPopup-checkout__agreement {
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+
+.vxPopup-checkout__submit {
+    margin: 20px 0;
+}
+/* End */
+/* /bitrix/components/vladrix/basket.page/templates/.default/style.css?16472029893975 */
+/* /bitrix/components/vladrix/basket.checkout/templates/.default/style.css?16472029891241 */

@@ -1,0 +1,32 @@
+{% extends 'firstapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<main class="container content">
+        <h1 class="h1 decorated">Контакты</h1>
+        <div class="contacts container">         
+        Outlet Official Management Italy S.r.l. ©<br><br>Юридический адрес: Via Cordusio, 1 – 20123 Milano<br>Регистрационный номер в бюро учета IVA 03684090966<br>Полностью оплаченный уставной капитал в размере 100.000,00 €<br>Реестр предприятий Milano REA MI-2087357<br><br>Уполномоченный представитель в РФ:<br>ООО «Аутлет», Москва, ул. Плющиха, д.42<br><br>E-mail: <a href="mailto:order@outlet-official.moscow">order@outlet-official.moscow</a>        
+        
+        
+        </div>
+        <style>
+            .contacts__list,
+            .contacts__item {
+                justify-content: center;
+                -webkit-align-items: center;
+                -moz-box-align: center;
+                -ms-flex-align: center;
+            }
+
+            .contacts__item-title {
+                margin-right: 10px;
+            }
+        </style>
+        <section class="contacts">
+            <div class="container">
+                <div class="contacts__list"> </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

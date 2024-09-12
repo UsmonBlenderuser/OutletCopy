@@ -1,0 +1,134 @@
+{% extends 'firstapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <main class="">
+        <div class="w-slider container">
+            <div class="w-slider__list js-run_w-slider"> 
+                                    <a class="w-slider__item" href="/catalog?brand=WyIzOCJd"> 
+                        <img src="{% static 'firstapp/imgs/slider/slide_1_1684671835.jpeg' %}">
+                    </a> 
+                                    <a class="w-slider__item" href="/catalog?brand=WyIxNiJd"> 
+                        <img src="{% static 'firstapp/imgs/slider/slide_2_1684671863.jpeg' %}">
+                    </a> 
+                                    <a class="w-slider__item" href="/catalog?brand=WyIyOCJd"> 
+                        <img src="{% static 'firstapp/imgs/slider/slide_3_1684671880.jpeg' %}">
+                    </a> 
+                                    <a class="w-slider__item" href="/catalog?brand=WyIyMiJd"> 
+                        <img src="{% static 'firstapp/imgs/slider/slide_4_1684671893.jpeg' %}">
+                    </a> 
+                                    <a class="w-slider__item" href="/catalog?brand=WyI2NyJd"> 
+                        <img src="{% static 'firstapp/imgs/slider/slide_5_1684671904.jpeg' %}">
+                    </a> 
+                 
+            </div>
+            <div class="w-slider__arrow w-slider__arrow--prev"> <svg xmlns="http://www.w3.org/2000/svg" fill="inherit"
+                    x="0px" y="0px" viewBox="0 0 612.007 612.007" style="enable-background:new 0 0 612.007 612.007;"
+                    xml:space="preserve" class="">
+                    <path transform="matrix(6.12323e-17 1 -1 6.12323e-17 612.007 0)"
+                        d="M596.168,130.647c-21.119-21.169-55.382-21.169-76.526,0L306.013,366.44L92.384,130.647 c-21.144-21.169-55.382-21.169-76.525,0c-21.144,21.169-21.144,55.458,0,76.627l248.504,274.31 c11.438,11.438,26.672,16.482,41.651,15.54c14.953,0.942,30.213-4.102,41.65-15.54l248.505-274.31 C617.287,186.105,617.287,151.817,596.168,130.647z"
+                        fill="inherit" />
+                </svg> </div>
+            <div class="w-slider__arrow w-slider__arrow--next"> <svg xmlns="http://www.w3.org/2000/svg" fill="inherit"
+                    x="0px" y="0px" viewBox="0 0 612.007 612.007" style="enable-background:new 0 0 612.007 612.007;"
+                    xml:space="preserve" class="">
+                    <path transform="matrix(6.12323e-17 -1 1 6.12323e-17 0 612.007)"
+                        d="M596.168,130.647c-21.119-21.169-55.382-21.169-76.526,0L306.013,366.44L92.384,130.647 c-21.144-21.169-55.382-21.169-76.525,0c-21.144,21.169-21.144,55.458,0,76.627l248.504,274.31 c11.438,11.438,26.672,16.482,41.651,15.54c14.953,0.942,30.213-4.102,41.65-15.54l248.505-274.31 C617.287,186.105,617.287,151.817,596.168,130.647z"
+                        fill="inherit" />
+                </svg> </div>
+        </div>
+        <div class="catalog m-b-30 p-b-30">
+            <div class="container">
+                <h1 class="h2 decorated color-red font-normal">НОВЫЕ ПОСТУПЛЕНИЯ</h1>
+                <div class="catalog__swiper">
+                    <div class="catalog__list">
+                        {% for product, images in products5 %}
+                        <div class="catalog__item" id="bx_3966226736_39767">
+                            <div class="catalog__item-picSlider js-catalog-pic-slider">
+                                <a href="catalog/obuv/39767.html" class="catalog__item-pic"> <img src="https://outlet-village.moscow/upload/resize_cache/iblock/557/400_400_1821712164bebe8964a3cb4f91f48bb72/l6cusxjj7fxdoqtpe902b66iqgzx3s58.jpeg" alt=""> </a>
+                                <a href="catalog/obuv/39767.html" class="catalog__item-pic"> <img data-lazy="/upload/resize_cache/iblock/6ee/400_400_1821712164bebe8964a3cb4f91f48bb72/pdhsj6fgp8voyfz5mhp3fz0mmr8h9qwe.jpeg" alt=""> </a>
+                                <a href="catalog/obuv/39767.html" class="catalog__item-pic"> <img data-lazy="/upload/resize_cache/iblock/679/400_400_1821712164bebe8964a3cb4f91f48bb72/hq7t34p3j7p4x9kez43kxsf1fdavtbti.jpeg" alt=""> </a>
+                                <a href="catalog/obuv/39767.html" class="catalog__item-pic"> <img data-lazy="/upload/resize_cache/iblock/397/400_400_1821712164bebe8964a3cb4f91f48bb72/iukvt69s3c6f06lialcaypc8dtxgl499.jpeg" alt=""> </a>
+                                <a href="catalog/obuv/39767.html" class="catalog__item-pic"> <img data-lazy="/upload/resize_cache/iblock/381/400_400_1821712164bebe8964a3cb4f91f48bb72/gyk3ooutexz9gma07ev2752e0zo8kach.jpeg" alt=""> </a>
+                            </div>
+                            <a href="catalog/obuv/39767.html" class="catalog__item-name"> {{ product.brand }} </a>
+                            <div class="catalog__item-desc">Туфли Infinie 50 pump</div>
+                            <a class="catalog__item-prices"> <span class="catalog__item-price"> {{ product.sale_price }} <span>₽</span> </span> <span class="catalog__item-old-price"> {{ product.price }} <span>₽</span> </span> <span class="catalog__item-sale"> ({{ product.sale }} <span>%</span>) </span>
+                            </a> <a class="btn btn--primary catalog__item-btn" href="catalog/obuv/39767.html">Купить</a> </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="text-center m-t-30"> <a href="catalog/index.html%3FcatalogFilter_40_3233089245=Y&amp;set_filter=Показать.html" class="btn btn--primary">Смотреть еще</a> </div>
+            </div>
+        </div>
+        <div class="h2 decorated m-t-20">ПОПУЛЯРНОЕ</div>
+        <div class="popular container m-b-30">
+            <div class="popular__list js-popular-slider"> 
+                                    <a class="popular__item" href="{% url 'product' 'sumka-heather-mini' %}" id="popular_2" title='Перейти к товару "COACH"'>
+                        <img src="{% static 'firstapp/imgs/products/b97c17956c673f443041117ca310190d.jpeg' %}">
+                        <div class="popular__item-name"> COACH <span>Сумка на плечо Tabby</span> </div>
+                    </a> 
+                                    <a class="popular__item" href="/product?p=5" id="popular_5" title='Перейти к товару "Michael Kors"'> 
+                        <img src="{% static 'firstapp/imgs/products/xosf26m56qf7c0tmudsbvu2a03t75zky.jpeg' %}">
+                        <div class="popular__item-name"> Michael Kors <span>Сумка Heather mini</span> </div>
+                    </a> 
+                                    <a class="popular__item" href="/product?p=6" id="popular_6" title='Перейти к товару "Bottega Veneta"'> 
+                        <img src="{% static 'firstapp/imgs/products/0ez36n0jazk3k15mfsekxi1fajyur285.jpeg' %}">
+                        <div class="popular__item-name"> Bottega Veneta <span>Кожаные ботинки BV Tire</span> </div>
+                    </a> 
+                                    <a class="popular__item" href="/product?p=11" id="popular_11" title='Перейти к товару "Amina Muaddi"'> 
+                        <img src="{% static 'firstapp/imgs/products/hysoaw685o99wut6hq52k2awlq33743m.jpeg' %}">
+                        <div class="popular__item-name"> Amina Muaddi <span>Атласные туфли-лодочки с ремешком на пятке Camelia</span> </div>
+                    </a> 
+                                    <a class="popular__item" href="/product?p=8" id="popular_8" title='Перейти к товару "Hermes"'> 
+                        <img src="{% static 'firstapp/imgs/products/9sroudn5330nun0vbgmh0ix8x4gid03n.jpeg' %}">
+                        <div class="popular__item-name"> Hermes <span>Hermès Kelly Sellier 28</span> </div>
+                    </a> 
+                                    <a class="popular__item" href="/product?p=7" id="popular_7" title='Перейти к товару "Gucci"'> 
+                        <img src="{% static 'firstapp/imgs/products/oza2m3f9sff1288keol6thgh5l2ivjo2.jpeg' %}">
+                        <div class="popular__item-name"> Gucci <span>Кожаные лоферы Web Brixton</span> </div>
+                    </a> 
+                                    <a class="popular__item" href="/product?p=3" id="popular_3" title='Перейти к товару "Burberry"'> 
+                        <img src="{% static 'firstapp/imgs/products/b1vjn7chseidhy7msohno71mrjop5rac.jpeg' %}">
+                        <div class="popular__item-name"> Burberry <span>Толстовка с капюшоном</span> </div>
+                    </a> 
+                                    <a class="popular__item" href="/product?p=4" id="popular_4" title='Перейти к товару "Gucci"'> 
+                        <img src="{% static 'firstapp/imgs/products/ep546kuffhsv95fwkt12uvqwvrl14e8q.jpeg' %}">
+                        <div class="popular__item-name"> Gucci <span>Женские кроссовки с логотипом GG</span> </div>
+                    </a> 
+                 
+            </div>
+        </div>
+        <div class="catalog m-b-30 p-b-30">
+            <div class="container">
+                <h1 class="h2 decorated">КАТАЛОГ ТОВАРОВ</h1>
+                <div class="catalog__list">
+                    {% for product, images in products10 %}
+                                            <div class="catalog__item" id="pr_10_234">
+                            <div class="catalog__item-picSlider js-catalog-pic-slider">
+                                {% for image in images %}
+                                                                    <a href="{% url 'product' product.slug %}" class="catalog__item-pic">
+                                        <img src="{{ image.image.url }}" alt="">
+                                    </a>
+                                {% endfor %}
+                                                            
+                            </div> 
+                            <a href="{% url 'product' product.slug %}" class="catalog__item-name">{{ product.brand }} </a>
+                            <div class="catalog__item-desc">{{ product.title }}</div>
+                            <a class="catalog__item-prices"> 
+                                <span class="catalog__item-price"> {{ product.sale_price }}  <span>₽</span> </span>
+                                <span class="catalog__item-old-price"> {{ product.price }} <span>₽</span> </span>
+                                <span class="catalog__item-sale"> ({{ product.sale }} <span>%</span>) </span>
+                            </a> 
+                            <a class="btn btn--primary catalog__item-btn" href="{% url 'product' product.slug %}">Купить</a>
+                        </div>
+                    {% endfor %}
+                    
+                </div>
+                <div class="text-center m-t-30"> <a href="/catalog" class="btn btn--primary">Посмотреть все товары</a> </div>
+            </div>
+        </div>
+        
+    </main>
+{% endblock %}

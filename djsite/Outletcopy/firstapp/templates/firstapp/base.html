@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="{% static 'firstapp/favicon.jpg' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" type="text/css" rel="stylesheet" />
+    <!-- <link href="/js/ui.font.opensans.min.css?1" type="text/css" rel="stylesheet" /> -->
+    <link href="{% static 'firstapp/css/main.popup.bundle.min.css' %}" type="text/css" rel="stylesheet" />
+    <link href="{% static 'firstapp/css/template_25e8d35d4a27156537b2ab118068ed58_v1.css' %}" type="text/css" data-template-style="true" rel="stylesheet" />
+    <script type="text/javascript"> if (!window.BX) window.BX = {}; if (!window.BX.message) window.BX.message = function (mess) { if (typeof mess === 'object') { for (let i in mess) { BX.message[i] = mess[i]; } return true; } }; </script>
+    <script type="text/javascript"> (window.BX || top.BX).message({ 'JS_CORE_LOADING': 'Загрузка...', 'JS_CORE_NO_DATA': '- Нет данных -', 'JS_CORE_WINDOW_CLOSE': 'Закрыть', 'JS_CORE_WINDOW_EXPAND': 'Развернуть', 'JS_CORE_WINDOW_NARROW': 'Свернуть в окно', 'JS_CORE_WINDOW_SAVE': 'Сохранить', 'JS_CORE_WINDOW_CANCEL': 'Отменить', 'JS_CORE_WINDOW_CONTINUE': 'Продолжить', 'JS_CORE_H': 'ч', 'JS_CORE_M': 'м', 'JS_CORE_S': 'с', 'JSADM_AI_HIDE_EXTRA': 'Скрыть лишние', 'JSADM_AI_ALL_NOTIF': 'Показать все', 'JSADM_AUTH_REQ': 'Требуется авторизация!', 'JS_CORE_WINDOW_AUTH': 'Войти', 'JS_CORE_IMAGE_FULL': 'Полный размер' });</script>
+    <script type="text/javascript" src="{% static 'firstapp/js/core.js' %}"></script>
+    <!-- <script> BX.setJSList(['/bitrix/js/main/core/core_ajax.js', '/bitrix/js/main/core/core_promise.js', '/bitrix/js/main/polyfill/promise/js/promise.js', '/bitrix/js/main/loadext/loadext.js', '/bitrix/js/main/loadext/extension.js', '/bitrix/js/main/polyfill/promise/js/promise.js', '/bitrix/js/main/polyfill/find/js/find.js', '/bitrix/js/main/polyfill/includes/js/includes.js', '/bitrix/js/main/polyfill/matches/js/matches.js', '/bitrix/js/ui/polyfill/closest/js/closest.js', '/bitrix/js/main/polyfill/fill/main.polyfill.fill.js', '/bitrix/js/main/polyfill/find/js/find.js', '/bitrix/js/main/polyfill/matches/js/matches.js', '/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js', '/bitrix/js/main/core/core.js', '/bitrix/js/main/polyfill/intersectionobserver/js/intersectionobserver.js', '/bitrix/js/main/lazyload/dist/lazyload.bundle.js', '/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js', '/bitrix/js/main/parambag/dist/parambag.bundle.js']); BX.setCSSList(['/bitrix/js/main/lazyload/dist/lazyload.bundle.css', '/bitrix/js/main/parambag/dist/parambag.bundle.css']);</script>
+--> <script
+        type="text/javascript">(window.BX || top.BX).message({ 'LANGUAGE_ID': 'ru', 'FORMAT_DATE': 'DD.MM.YYYY', 'FORMAT_DATETIME': 'DD.MM.YYYY HH:MI:SS', 'COOKIE_PREFIX': 'BITRIX_SM', 'SERVER_TZ_OFFSET': '10800', 'UTF_MODE': 'Y', 'SITE_ID': 's3', 'SITE_DIR': '/', 'USER_ID': '', 'SERVER_TIME': '1684033435', 'USER_TZ_OFFSET': '0', 'USER_TZ_AUTO': 'Y', 'bitrix_sessid': '8a20872f3892081738d304c005938173' });</script>
+    <script type="text/javascript" src="{% static 'firstapp/js/kernel_main_v1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'firstapp/js/main.popup.bundle.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'firstapp/js/template_be960d078ca1c2b46313d86dc8101480_v1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'firstapp/js/page_d2f1d5aedc93eed2e9826537d25e4b71_v1.js' %}"></script>
+    <link href="{% static 'firstapp/css/page_990ca9c2cc949d08aa387ceece7a35d9_v1.css' %}"  type="text/css" rel="stylesheet" />
+    <link href="{% static 'firstapp/css/page_5f399f45898c48e8ca268c308c6bac79_v1.css' %}"  type="text/css" rel="stylesheet" />
+    <link href="{% static 'firstapp/css/font-awesome.min.css' %}" type="text/css" rel="stylesheet" />
+    <!--<script type="text/javascript">BX.setJSList(['/bitrix/js/main/core/core_fx.js', '/bitrix/js/main/session.js', '/bitrix/js/main/pageobject/pageobject.js', '/bitrix/js/main/core/core_window.js', '/bitrix/js/main/date/main.date.js', '/bitrix/js/main/core/core_date.js', '/bitrix/js/main/utils.js', '/local/templates/outlet-moscow/js/build.js', '/bitrix/components/vladrix/site.protect/resources/js/devtools-detecter.js', '/bitrix/components/vladrix/site.protect/resources/js/vladrix-site-protect.js', '/bitrix/components/vladrix/basket.api/templates/.default/script.js']);</script>
+-->
+<!--<script type="text/javascript">BX.setCSSList(['/bower_components/fancybox/dist/jquery.fancybox.min.css', '/local/templates/outlet-moscow/css/build.css', '/bitrix/components/vladrix/site.protect/resources/css/style.css', '/bitrix/components/vladrix/basket.api/templates/.default/style.css', '/local/templates/outlet-moscow/styles.css']);</script>
+
+    <script> BX.message({ ERROR: "Произошла ошибка! Функционал временно недоступен", ERROR_BASKET_UPDATE: "Ошибка! Не удалось обновить вашу корзину! Обратитесь к администратору!", }); BASKET.init(); </script>
+    <script
+        type="text/javascript">var _ba = _ba || []; _ba.push(["aid", "93855bed50923c1d53e2a666355ad862"]); _ba.push(["host", "outlet-village.moscow"]); (function () { var ba = document.createElement("script"); ba.type = "text/javascript"; ba.async = true; ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ba, s); })();</script>
+    <script> BX.message({ PLEASE_CLOSE_CONSOLE: 'Доступ заблокирован! Закройте devtools и перезагрузите страницу', UNDEFINED_DTLS_DETECTOR: 'Undefined DevtoolsDetector...', HEADLESS_BROWSER_DETECT: 'На сайт не разрешено заходить с Headless браузера', }); </script>
+    <script> document.addEventListener('DOMContentLoaded', function () { VladrixSiteProtect.init({ "imageProtect": true, "debugProtect": true, "headlessProtect": true, "blockSelectText": true, "blockContextMenu": true, "allowedContextMenuSelectors": ["a"], "allowedSelectTextSelectors": [] }); }); </script>
+-->    <title>{{ title }}</title>
+</head>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(93946406, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93946406" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<body>
+    <div class="promo"> Бесплатная доставка для всех заказов <a href="/catalog">К покупкам</a> </div>
+    <header class="header header--no-offset">
+    <div class="container header__container">
+        <div class="gender-menu">
+            <a href="{% url 'catalog' %}?woman=Y"
+                class="gender-menu__item "> <svg height="30" xmlns="http://www.w3.org/2000/svg" version="1.0"
+                    viewBox="0 0 752.000000 1280.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" stroke="none">
+                        <path
+                            d="M3475 12790 c-872 -69 -1713 -445 -2333 -1045 -582 -562 -979 -1342 -1101 -2160 -28 -190 -36 -300 -36 -550 0 -348 25 -567 100 -881 130 -546 381 -1056 742 -1510 112 -140 397 -425 538 -538 401 -320 909 -573 1448 -722 l57 -15 0 -535 0 -534 -1345 0 -1345 0 0 -860 0 -860 1345 0 1345 0 0 -1290 0 -1290 860 0 860 0 2 1288 3 1287 1348 3 1347 2 0 860 0 860 -1350 0 -1350 0 0 530 0 530 23 10 c12 5 76 23 142 40 750 196 1416 643 1947 1308 332 416 561 880 688 1395 79 322 104 544 105 912 0 316 -13 460 -67 735 -82 425 -257 871 -499 1269 -250 413 -609 798 -994 1066 -520 363 -1109 593 -1730 676 -172 23 -572 33 -750 19z m569 -1716 c413 -57 870 -276 1163 -557 307 -294 530 -741 600 -1197 20 -137 23 -440 4 -570 -70 -489 -266 -872 -622 -1216 -346 -334 -733 -517 -1198 -565 -164 -17 -475 -7 -621 21 -397 73 -729 243 -1028 525 -448 423 -671 966 -649 1580 14 367 111 695 301 1019 202 342 466 582 841 762 398 191 790 255 1209 198z" />
+                    </g>
+                </svg> Женское </a>
+                <a href="{% url 'catalog' %}?man=Y"
+                class="gender-menu__item "> <svg height="30" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+                    viewBox="0 0 16.165 16.165" style="enable-background:new 0 0 16.165 16.165;"
+                    xml:space="preserve">
+                    <g>
+                        <path
+                            d="M16.143,0.025V0.023L16.142,0H9.851v1.467h3.811L10.92,4.209c-0.584-0.471-1.253-0.855-2.001-1.117 C5.407,1.871,1.581,3.721,0.371,7.227c-1.213,3.506,0.65,7.338,4.16,8.561c3.511,1.223,7.337-0.627,8.547-4.133 c0.781-2.264,0.276-4.662-1.121-6.408l2.741-2.74v3.809h1.466V0.025H16.143z M11.088,10.963c-0.832,2.406-3.461,3.678-5.871,2.838 S1.528,10.328,2.36,7.92c0.833-2.408,3.461-3.68,5.87-2.84C10.641,5.922,11.92,8.554,11.088,10.963z">
+                        </path>
+                    </g>
+                </svg> Мужское </a>
+                <a href="{% url 'catalog' %}?kids=Y"
+                class="gender-menu__item "> <svg height="30" xmlns="http://www.w3.org/2000/svg" version="1.0"
+                    viewBox="0 0 900.000000 1280.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" stroke="none">
+                        <path
+                            d="M4310 12789 c-614 -65 -1163 -453 -1436 -1015 -249 -513 -241 -1104 22 -1614 449 -870 1513 -1226 2390 -799 536 261 909 768 999 1357 20 128 20 407 0 536 -56 367 -210 690 -459 962 -380 414 -957 633 -1516 573z" />
+                        <path
+                            d="M3198 8884 c-152 -27 -299 -95 -423 -194 -33 -27 -637 -626 -1342 -1332 -918 -919 -1292 -1301 -1321 -1345 -167 -263 -144 -552 63 -759 78 -78 134 -113 245 -152 140 -48 332 -32 475 40 116 59 181 121 927 871 l767 772 1 -692 0 -693 1905 0 1905 0 0 693 0 694 803 -802 c711 -710 810 -805 871 -838 103 -56 186 -78 291 -80 111 -1 176 14 283 65 98 46 208 144 261 232 130 215 116 468 -36 672 -55 73 -2566 2591 -2638 2646 -133 99 -233 148 -390 191 -80 21 -81 21 -1325 23 -1030 2 -1258 0 -1322 -12z" />
+                        <path
+                            d="M1944 4038 c-353 -354 -655 -663 -671 -688 -40 -60 -78 -134 -101 -195 -66 -174 -73 -413 -17 -631 30 -118 122 -310 193 -404 56 -74 1768 -1861 1864 -1946 77 -67 218 -139 313 -159 205 -43 395 15 551 170 119 117 181 248 191 405 10 161 -42 310 -157 453 -32 39 -301 315 -599 612 l-541 540 527 527 528 528 -715 715 c-393 393 -717 715 -720 715 -3 0 -294 -289 -646 -642z" />
+                        <path
+                            d="M5670 3965 l-715 -715 527 -527 528 -528 -588 -590 c-627 -630 -637 -641 -684 -785 -26 -81 -35 -229 -18 -313 35 -180 172 -357 343 -444 205 -104 454 -74 661 79 69 51 1832 1878 1905 1973 157 208 240 480 228 749 -8 182 -40 296 -124 439 -43 74 -114 148 -692 730 -355 356 -647 647 -651 647 -3 0 -327 -322 -720 -715z" />
+                    </g>
+                </svg> Детское </a> </div> <a class="header__logo" href="/"> <img
+                src="{% static 'firstapp/logo2.png' %}" alt="" height="67"> </a>
+        <div class="header__right">
+            <div class="header__lang"> <svg xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+                    <defs>
+                        <path id="a"
+                            d="M.832 14A9.966 9.966 0 0 1 0 10c0-1.422.297-2.775.832-4h18.336A9.966 9.966 0 0 1 20 10a9.966 9.966 0 0 1-.832 4H.832z" />
+                        <path id="b" d="M.832 6C2.375 2.468 5.9 0 10 0c4.1 0 7.625 2.468 9.168 6H.832z" />
+                    </defs>
+                    <g fill="none" fill-rule="evenodd" transform="translate(2 2)">
+                        <path fill="#D55858"
+                            d="M.832 14h18.336A10.002 10.002 0 0 1 10 20c-4.1 0-7.625-2.468-9.168-6z" />
+                        <use fill="#406FA7" xlink:href="#a" />
+                        <use fill="#F6F6F6" xlink:href="#b" />
+                    </g>
+                </svg> RU / MSK </div> <a class="header__cabinet" href=""> </a>
+
+            <form class="header__search" action="/search"> <label for="search" class="header__search-pic"
+                    title="Поиск по сайту"> <svg xmlns="http://www.w3.org/2000/svg" height="100%"
+                        viewBox="0 0 20 20" fill="#333">
+                        <path
+                            d="M19 17l-5.15-5.15a7 7 0 1 0-2 2L17 19zM3.5 8A4.5 4.5 0 1 1 8 12.5 4.5 4.5 0 0 1 3.5 8z" />
+                    </svg> </label> <input id="search" type="text" name="q" class="header__search-input"
+                    placeholder="Поиск">
+            </form>
+                    <a class="header__cart" href="{% url 'cart' %}"
+                title="Перейти в корзину"> <svg xmlns="http://www.w3.org/2000/svg" height="100%" fill="#333"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 510 510"
+                    style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                    <g>
+                        <g id="shopping-cart">
+                            <path
+                                d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306 c-2.55,7.65-5.1,17.85-5.1,25.5c0,28.05,22.95,51,51,51h306v-51H163.2c-2.55,0-5.1-2.55-5.1-5.1v-2.551l22.95-43.35h188.7 c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408 c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z" />
+                        </g>
+                    </g>
+                </svg> <span class="header__cart-quantity" id='totalQuantity_basket'>0</span></a>
+        </div>
+    </div>
+    <nav class="container menu">
+        <div class="menu__toggle"> <span class="menu__toggle-inner"></span> </div>
+        <div class="gender-menu"> <a href="{% url 'catalog' %}?woman=Y"
+                class="gender-menu__item "> <svg height="30" xmlns="http://www.w3.org/2000/svg" version="1.0"
+                    viewBox="0 0 752.000000 1280.000000" preserveAspectRatio="woman meet">
+                    <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" stroke="none">
+                        <path
+                            d="M3475 12790 c-872 -69 -1713 -445 -2333 -1045 -582 -562 -979 -1342 -1101 -2160 -28 -190 -36 -300 -36 -550 0 -348 25 -567 100 -881 130 -546 381 -1056 742 -1510 112 -140 397 -425 538 -538 401 -320 909 -573 1448 -722 l57 -15 0 -535 0 -534 -1345 0 -1345 0 0 -860 0 -860 1345 0 1345 0 0 -1290 0 -1290 860 0 860 0 2 1288 3 1287 1348 3 1347 2 0 860 0 860 -1350 0 -1350 0 0 530 0 530 23 10 c12 5 76 23 142 40 750 196 1416 643 1947 1308 332 416 561 880 688 1395 79 322 104 544 105 912 0 316 -13 460 -67 735 -82 425 -257 871 -499 1269 -250 413 -609 798 -994 1066 -520 363 -1109 593 -1730 676 -172 23 -572 33 -750 19z m569 -1716 c413 -57 870 -276 1163 -557 307 -294 530 -741 600 -1197 20 -137 23 -440 4 -570 -70 -489 -266 -872 -622 -1216 -346 -334 -733 -517 -1198 -565 -164 -17 -475 -7 -621 21 -397 73 -729 243 -1028 525 -448 423 -671 966 -649 1580 14 367 111 695 301 1019 202 342 466 582 841 762 398 191 790 255 1209 198z" />
+                    </g>
+                </svg> Женское </a> <a href="{% url 'catalog' %}?man=Y"
+                class="gender-menu__item "> <svg height="30" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+                    viewBox="0 0 16.165 16.165" style="enable-background:new 0 0 16.165 16.165;"
+                    xml:space="preserve">
+                    <g>
+                        <path
+                            d="M16.143,0.025V0.023L16.142,0H9.851v1.467h3.811L10.92,4.209c-0.584-0.471-1.253-0.855-2.001-1.117 C5.407,1.871,1.581,3.721,0.371,7.227c-1.213,3.506,0.65,7.338,4.16,8.561c3.511,1.223,7.337-0.627,8.547-4.133 c0.781-2.264,0.276-4.662-1.121-6.408l2.741-2.74v3.809h1.466V0.025H16.143z M11.088,10.963c-0.832,2.406-3.461,3.678-5.871,2.838 S1.528,10.328,2.36,7.92c0.833-2.408,3.461-3.68,5.87-2.84C10.641,5.922,11.92,8.554,11.088,10.963z">
+                        </path>
+                    </g>
+                </svg> Мужское </a> <a href="{% url 'catalog' %}?kids=Y"
+                class="gender-menu__item "> <svg height="30" xmlns="http://www.w3.org/2000/svg" version="1.0"
+                    viewBox="0 0 900.000000 1280.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" stroke="none">
+                        <path
+                            d="M4310 12789 c-614 -65 -1163 -453 -1436 -1015 -249 -513 -241 -1104 22 -1614 449 -870 1513 -1226 2390 -799 536 261 909 768 999 1357 20 128 20 407 0 536 -56 367 -210 690 -459 962 -380 414 -957 633 -1516 573z" />
+                        <path
+                            d="M3198 8884 c-152 -27 -299 -95 -423 -194 -33 -27 -637 -626 -1342 -1332 -918 -919 -1292 -1301 -1321 -1345 -167 -263 -144 -552 63 -759 78 -78 134 -113 245 -152 140 -48 332 -32 475 40 116 59 181 121 927 871 l767 772 1 -692 0 -693 1905 0 1905 0 0 693 0 694 803 -802 c711 -710 810 -805 871 -838 103 -56 186 -78 291 -80 111 -1 176 14 283 65 98 46 208 144 261 232 130 215 116 468 -36 672 -55 73 -2566 2591 -2638 2646 -133 99 -233 148 -390 191 -80 21 -81 21 -1325 23 -1030 2 -1258 0 -1322 -12z" />
+                        <path
+                            d="M1944 4038 c-353 -354 -655 -663 -671 -688 -40 -60 -78 -134 -101 -195 -66 -174 -73 -413 -17 -631 30 -118 122 -310 193 -404 56 -74 1768 -1861 1864 -1946 77 -67 218 -139 313 -159 205 -43 395 15 551 170 119 117 181 248 191 405 10 161 -42 310 -157 453 -32 39 -301 315 -599 612 l-541 540 527 527 528 528 -715 715 c-393 393 -717 715 -720 715 -3 0 -294 -289 -646 -642z" />
+                        <path
+                            d="M5670 3965 l-715 -715 527 -527 528 -528 -588 -590 c-627 -630 -637 -641 -684 -785 -26 -81 -35 -229 -18 -313 35 -180 172 -357 343 -444 205 -104 454 -74 661 79 69 51 1832 1878 1905 1973 157 208 240 480 228 749 -8 182 -40 296 -124 439 -43 74 -114 148 -692 730 -355 356 -647 647 -651 647 -3 0 -327 -322 -720 -715z" />
+                    </g>
+                </svg> Детское </a> </div>
+        <ul class="menu__list">
+            <li class="menu__item "> <a class="menu__link" href="{% url 'brandlist' %}"> Бренды <svg class="menu__link-arrow"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                        x="0px" y="0px" viewBox="0 0 240.823 240.823"
+                        style="enable-background:new 0 0 240.823 240.823;" xml:space="preserve">
+                        <g>
+                            <path id="Chevron_Right_1_"
+                                d="M183.189,111.816L74.892,3.555c-4.752-4.74-12.451-4.74-17.215,0c-4.752,4.74-4.752,12.439,0,17.179 l99.707,99.671l-99.695,99.671c-4.752,4.74-4.752,12.439,0,17.191c4.752,4.74,12.463,4.74,17.215,0l108.297-108.261 C187.881,124.315,187.881,116.495,183.189,111.816z" />
+                        </g>
+                    </svg> </a>
+                <ul class="sub-menu">
+                    {% for item in brands %}
+                                                <li class="sub-menu__item ">
+                            <a href="/catalog?{{ item.slug }}=Y" class="sub-menu__link">
+                                <span class="sub-menu__link-text">{{ item.title }}</span>
+                                <svg class="sub-menu__link-arrow" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"  viewBox="0 0 240.823 240.823" style="enable-background:new 0 0 240.823 240.823;" xml:space="preserve">
+                                    <g> <path id="Chevron_Right_1_" d="M183.189,111.816L74.892,3.555c-4.752-4.74-12.451-4.74-17.215,0c-4.752,4.74-4.752,12.439,0,17.179 l99.707,99.671l-99.695,99.671c-4.752,4.74-4.752,12.439,0,17.191c4.752,4.74,12.463,4.74,17.215,0l108.297-108.261 C187.881,124.315,187.881,116.495,183.189,111.816z" /></g>
+                                </svg>
+                            </a>
+                        </li>
+                    {% endfor %}
+                                        </ul>
+            </li>
+            {% for item in categories %}
+            <li class="menu__item ">
+                <a class="menu__link" href="#"> {{ item.title }}
+                    <svg class="menu__link-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 240.823 240.823" style="enable-background:new 0 0 240.823 240.823;" xml:space="preserve">
+                        <g> <path id="Chevron_Right_1_" d="M183.189,111.816L74.892,3.555c-4.752-4.74-12.451-4.74-17.215,0c-4.752,4.74-4.752,12.439,0,17.179 l99.707,99.671l-99.695,99.671c-4.752,4.74-4.752,12.439,0,17.191c4.752,4.74,12.463,4.74,17.215,0l108.297-108.261 C187.881,124.315,187.881,116.495,183.189,111.816z" /></g>
+                    </svg>
+                </a>
+                <ul class="sub-menu">
+                    {% for type in item.type.all %}
+                                        <li class="sub-menu__item ">
+                        <a href="{% url 'catalog' %}?type={{ type.slug }}" class="sub-menu__link">
+                            <span class="sub-menu__link-text">{{ type.title }}</span>
+                            <svg class="sub-menu__link-arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 240.823 240.823" style="enable-background:new 0 0 240.823 240.823;" xml:space="preserve">
+                                <g><path id="Chevron_Right_1_" d="M183.189,111.816L74.892,3.555c-4.752-4.74-12.451-4.74-17.215,0c-4.752,4.74-4.752,12.439,0,17.179 l99.707,99.671l-99.695,99.671c-4.752,4.74-4.752,12.439,0,17.191c4.752,4.74,12.463,4.74,17.215,0l108.297-108.261 C187.881,124.315,187.881,116.495,183.189,111.816z" /> </g>
+                            </svg>
+                        </a>
+                    </li>
+                    {% endfor %}
+                                    </ul>
+            </li>
+            {% endfor %}
+            <li class="menu__item "> <a class="menu__link" href="{% url 'subcatalog' 'nizhnee-bele-i-kupalniki' %}">Нижнее белье и купальники</a> </li>
+            <li class="menu__item "> <a class="menu__link" href="{% url 'subcatalog' 'final-sale' %}">Final Sale</a> </li>
+
+            <li class="menu__item ">
+                <a class="menu__link" href="{% url 'subcatalog' 'domashnij-tekstil' %}"> Домашний текстиль</a>
+            </li>
+            <li class="menu__item "> <a class="menu__link" href="{% url 'delivery' %}">Доставка <br>и оплата</a> </li>
+            <li class="menu__item "> <a class="menu__link" href="{% url 'contact' %}">Контакты</a> </li>
+        </ul>
+    </nav>
+</header>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer">
+    <div class="container footer__container">
+        <div class="footer__copyright">Outlet Village - Интернет магазин брендовых товаров! 2023 © <a href="/"
+                style="color: inherit">outlet-official.moscow</a> <br> </div>
+        <div class="footer__menu"> • <a href="/privacy" class="m-r-10">Политика конфиденциальности</a> • <a
+                href="/refund">Возвраты</a> </div>
+    </div>
+</footer>
+<script type="text/javascript" src="js/orders.js?1"></script></body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'firstapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+    <main class="container content">
+        <h1 class="h1 decorated">Бренды</h1>
+        <div class="brands container m-b-30">
+            {% for item in brands %}
+                                <div class="brands__item" id="{{ item.slug }}">
+                        <a class="brands__link" href="/catalog?{{ item.slug }}=Y">{{ item.title }}</a>
+                    </div>
+            {% endfor %}
+        </div>
+    </main>
+
+{% endblock %}

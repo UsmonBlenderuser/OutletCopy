@@ -1,0 +1,98 @@
+{% extends 'firstapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <main class="container content">
+        <div class="product">
+            <div class="product__container">
+                <div class="product__left">
+                    <div class="product__previews">
+                        <div class="js-product-previews-slider" id="product-previews">
+                            {% for image in images %}
+                                                            <div class="product__preview"> 
+                                    <img src="{{ image.image.url }}" alt="">
+                                </div>
+                            {% endfor %}
+                                                    </div>
+                    </div>
+                    <div class="product__pictures">
+                        <div class="js-product-pictures-slider" id="product-pictures">
+                            {% for image in images %}
+                                                             <span class="product__picture product__picture--horizontal"  href="{{ image.image.url }}" data-fancybox="photos" rel="nofollow">
+                                    <img src="{{ image.image.url }}" alt="">
+                                </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="product__right">                     
+                        <h1 class="h1 decorated product__name"> <a href="/catalog?brand=39">Hermes</a> </h1>
+                        <div class="product__prices">
+                            <div class="product__price"> {{ product.sale_price }} <span>₽</span> </div>
+                            <div class="product__old-price"> {{ product.price }} <span>₽</span> </div> <span class="product__sale"
+                                title="Скидка"> ({{ product.sale }} <span>% OFF</span>) </span>
+                        </div>
+                        <div class="product__color">
+                            <div class="m-b-5">ВЫБЕРИТЕ ЦВЕТ:</div>
+                            <div class="dropdown dropdown--required">
+                                <div class="dropdown__list">
+                                    {% for color in product.colors.all %}
+                                                                            <label class="dropdown__item" onClick="document.getElementById('p_color').value = '{{ color.title }}'">
+                                            <span class="dropdown__item-preview circle-radius" style="background: #{{ color.color }}"> </span>
+                                            <input type="radio" name="p_color" value="1" required> 
+                                            <span>{{ color.title }}</span>
+                                        </label>
+                                    {% endfor %}
+                                                                    </div>
+                            </div>
+                        </div>
+                        <div class="product__size" >
+                            <div class="m-b-5">ВЫБЕРИТЕ РАЗМЕР:</div>
+                            <div class="dropdown dropdown--required">
+                                <div class="dropdown__list">
+                                    {% for size in product.sizes.all %}
+                                                                            <label class="dropdown__item" onClick="document.getElementById('p_size').value = '{{ size.title }}'">
+                                            <input type="radio" name="" value="{{ size.title }}" required>
+                                            <span>{{ size.title }}</span>
+                                        </label>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="product__buttons" id='btn_to_cart' onClick='add_to_cart();'> 
+                            <label class="btn btn--primary" > 
+                                <svg class="v-a-middle m-r-10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="15" viewBox="0 0 512 512">
+                                    <g id="icomoon-ignore"></g> <path d="M192 464c0 26.51-21.49 48-48 48s-48-21.49-48-48c0-26.51 21.49-48 48-48s48 21.49 48 48z"> </path>
+                                    <path  d="M512 464c0 26.51-21.49 48-48 48s-48-21.49-48-48c0-26.51 21.49-48 48-48s48 21.49 48 48z"> </path>
+                                    <path  d="M512 256v-192h-384c0-17.673-14.327-32-32-32h-96v32h64l24.037 206.027c-14.647 11.729-24.037 29.75-24.037 49.973 0 35.348 28.654 64 64 64h384v-32h-384c-17.673 0-32-14.327-32-32 0-0.109 0.007-0.218 0.008-0.328l415.992-63.672z"></path>
+                                </svg> 
+                                <span>В КОРЗИНУ</span> 
+                             </label>                              
+                         </div>
+                         <div class="product__buttons" id='btn_remove_from_cart' style='display: none'> 
+                            <label class="btn btn--primary"> 
+                                <svg class="v-a-middle" fill="#09D261" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 26 26" version="1.1"  width="20" height="20">
+                                    <g> <path d="M 22.566406 4.730469 L 20.773438 3.511719 C 20.277344 3.175781 19.597656 3.304688 19.265625 3.796875 L 10.476563 16.757813 L 6.4375 12.71875 C 6.015625 12.296875 5.328125 12.296875 4.90625 12.71875 L 3.371094 14.253906 C 2.949219 14.675781 2.949219 15.363281 3.371094 15.789063 L 9.582031 22 C 9.929688 22.347656 10.476563 22.613281 10.96875 22.613281 C 11.460938 22.613281 11.957031 22.304688 12.277344 21.839844 L 22.855469 6.234375 C 23.191406 5.742188 23.0625 5.066406 22.566406 4.730469 Z " /></g>
+                                </svg> 
+                                <span>ДОБАВЛЕНО</span> 
+                            </label>
+                        </div>                                                 
+                        <div class="product__params" >
+                            <p><b>Сезон:</b> {{ product.season }}</p>
+                        </div>
+                        <div class="product__tabs-container">
+                            <div class="product__tabs-content">
+                                <div class="h3 m-b-20">Информация о товаре</div>
+                                <div id="description"> 
+                                    {{ product.description }}                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'firstapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<main class="container content">
+	<h1 class="h1 decorated">Доставка и оплата</h1>
+	<div class="delivery__table">
+		<div class="delivery__table-row delivery__table-row_head">
+			<div class="delivery__table-cell"> Регион </div>
+			<div class="delivery__table-cell">
+				<div class="delivery__table delivery__table_inner">
+					<div class="delivery__table-cell"> </div>
+					<div class="delivery__table-cell delivery__table-cell_caption"> Стоимость доставки </div>
+					<div class="delivery__table-cell"> </div>
+					<div class="delivery__table-cell"> </div>
+				</div>
+				<div class="delivery__table delivery__table_inner">
+					<div class="delivery__table-cell"> Служба доставки </div>
+					<div class="delivery__table-cell"> Доставка </div>
+					<div class="delivery__table-cell"> При покупке </div>
+					<div class="delivery__table-cell"> Сроки доставки* </div>
+				</div>
+			</div>
+		</div>
+		<div class="delivery__table-row">
+			<div class="delivery__table-cell"> Москва
+				<br> <span style=" color: #888; font-size: 12px; ">Оплата курьеру наличными после примерки</span> </div>
+			<div class="delivery__table-cell">
+				<div class="delivery__table delivery__table_inner">
+					<div class="delivery__table-cell"> Курьер
+						<br> </div>
+					<div class="delivery__table-cell"> 500&nbsp;₽ </div>
+					<div class="delivery__table-cell"> Бесплатно </div>
+					<div class="delivery__table-cell"> 1&nbsp;день </div>
+				</div>
+			</div>
+		</div>
+		<div class="delivery__table-row">
+			<div class="delivery__table-cell"> Московская область
+				<br> <span style=" color: #888; font-size: 12px; ">В шаговой доступности от метро до адреса</span> </div>
+			<div class="delivery__table-cell">
+				<div class="delivery__table delivery__table_inner">
+					<div class="delivery__table-cell"> Курьер
+						<br> </div>
+					<div class="delivery__table-cell"> 500&nbsp;₽ + 35₽/1км </div>
+					<div class="delivery__table-cell"> Бесплатно </div>
+					<div class="delivery__table-cell"> 1&nbsp;день </div>
+				</div>
+			</div>
+		</div>
+		<div class="delivery__table-row">
+			<div class="delivery__table-cell"> Вся Россия
+				<br> <span style=" color: #888; font-size: 12px; ">Оплата 100% на карту Сбербанка</span> </div>
+			<div class="delivery__table-cell">
+				<div class="delivery__table delivery__table_inner">
+					<div class="delivery__table-cell"> Почта России </div>
+					<div class="delivery__table-cell"> от 300&nbsp;₽ </div>
+					<div class="delivery__table-cell"> Бесплатно </div>
+					<div class="delivery__table-cell"> 1-10 дней </div>
+				</div>
+				<div class="delivery__table delivery__table_inner">
+					<div class="delivery__table-cell"> Служба доставки СДЭК </div>
+					<div class="delivery__table-cell"> от 250&nbsp;₽ </div>
+					<div class="delivery__table-cell"> Бесплатно </div>
+					<div class="delivery__table-cell"> 1-10 дней </div>
+				</div>
+				<div class="delivery__table delivery__table_inner">
+					<div class="delivery__table-cell"> EMS </div>
+					<div class="delivery__table-cell"> 1200&nbsp;₽ </div>
+					<div class="delivery__table-cell"> Бесплатно </div>
+					<div class="delivery__table-cell"> 1-10 дней </div>
+				</div>
+			</div>
+		</div>
+		<div class="delivery__table-row">
+			<div class="delivery__table-cell"> Другие страны
+				<br> <span style=" color: #888; font-size: 12px; ">Оплата 100% на карту Сбербанка</span> </div>
+			<div class="delivery__table-cell">
+				<div class="delivery__table delivery__table_inner">
+					<div class="delivery__table-cell"> Почта России </div>
+					<div class="delivery__table-cell"> от 1650&nbsp;₽ </div>
+					<div class="delivery__table-cell"> 1200&nbsp;₽ </div>
+					<div class="delivery__table-cell"> от 10 дней </div>
+				</div>
+				<div class="delivery__table delivery__table_inner">
+					<div class="delivery__table-cell"> EMS </div>
+					<div class="delivery__table-cell"> от 1650&nbsp;₽ </div>
+					<div class="delivery__table-cell"> 1200&nbsp;₽ </div>
+					<div class="delivery__table-cell"> от 10 дней </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+</main>
+{% endblock %}

@@ -1,0 +1,251 @@
+{% extends 'firstapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+	<main class="container content">
+		<h1 class="h1 decorated">Каталог товаров</h1>
+		<div class="catalog-page">
+			<div class="catalog-page__filter">
+				<div id="catalog-toggle-filter" class="bx-toggle-filter p-t-5">
+					<svg xmlns="http://www.w3.org/2000/svg" height="30" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 58 65" version="1.1">
+						<g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+							<g id="Filter" transform="translate(1.000000, 1.000000)" stroke="#6B6C6E" fill="none" stroke-width="2">
+								<path d="M54,0 L2,0 C0.9,0 0,0.9 0,2 L21,33 C21,33.7 21.4,34.4 22,34.7 L22,62 L34,55 L34,34.7 C34.6,34.4 35,33.7 35,33 L56,2 C56,0.9 55.1,0 54,0 L54,0 Z" id="Shape" />
+								<path d="M7,4 L23,28" id="Shape" /> </g>
+						</g>
+					</svg>
+				</div>
+				<div id="catalog-filter-sticky" class="bx-filter bx-blue ">
+					<div class="bx-filter-section container-fluid">
+						<div class="row">
+							<div class="col-lg-12 bx-filter-title">Фильтры</div>
+						</div>
+						<form name="_form" action="{% url 'subcatalog' slug %}" method="get" class="smartfilter">
+							<div class="row">
+								<div class="col-lg-12 bx-filter-parameters-box "> <span class="bx-filter-container-modef"></span>
+									<div class="bx-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)"> <span class="bx-filter-parameters-box-hint">Бренд <i data-role="prop_angle" class="fa fa-angle-down"></i> </span> </div>
+									<div class="bx-filter-block" data-role="bx_filter_block">
+										<div class="row bx-filter-parameters-box-container">
+											<div class="col-xs-12">
+												{% for brand in brands %}
+												<div class="checkbox">
+													<label data-role="label_{{ brand.slug }}" class="bx-filter-param-label " for="{{ brand.slug }}"> <span class="bx-filter-input-checkbox"> <input type="checkbox" value="Y" name="{{ brand.slug }}" id="{{ brand.slug }}" onclick="smartFilter.click(this)" /> <span class="bx-filter-param-text" title="{{ brand.title }}">{{ brand.title }}</span> </span>
+													</label>
+												</div>
+												{% endfor %}
+											</div>
+										</div>
+										<div style="clear: both"></div>
+									</div>
+								</div>
+								<div class="col-lg-12 bx-filter-parameters-box "> <span class="bx-filter-container-modef"></span>
+									<div class="bx-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)"> <span class="bx-filter-parameters-box-hint">Пол <i data-role="prop_angle" class="fa fa-angle-down"></i> </span> </div>
+									<div class="bx-filter-block" data-role="bx_filter_block">
+										<div class="row bx-filter-parameters-box-container">
+											<div class="col-xs-12">
+												<div class="checkbox">
+													<label data-role="label_catalogFilter_3_1842515611" class="bx-filter-param-label " for="kids"> <span class="bx-filter-input-checkbox"> <input type="checkbox" value="Y" name="kids" id="kids" onclick="smartFilter.click(this)" /> <span class="bx-filter-param-text" title="Детское">Детское</span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<label data-role="label_catalogFilter_3_450215437" class="bx-filter-param-label " for="man"> <span class="bx-filter-input-checkbox"> <input type="checkbox" value="Y" name="man" id="man" onclick="smartFilter.click(this)" /> <span class="bx-filter-param-text" title="Мужское">Мужское</span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<label data-role="label_catalogFilter_3_2212294583" class="bx-filter-param-label " for="woman"> <span class="bx-filter-input-checkbox"> <input type="checkbox" value="Y" name="woman" id="woman" onclick="smartFilter.click(this)" /> <span class="bx-filter-param-text" title="Женское">Женское</span> </span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div style="clear: both"></div>
+									</div>
+								</div>
+								<div class="col-lg-12 bx-filter-parameters-box "> <span class="bx-filter-container-modef"></span>
+									<div class="bx-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)"> <span class="bx-filter-parameters-box-hint">Размер <i data-role="prop_angle" class="fa fa-angle-down"></i> </span> </div>
+									<div class="bx-filter-block" data-role="bx_filter_block">
+										<div class="row bx-filter-parameters-box-container">
+											<div class="col-xs-12">
+												{% for size in size_list %}
+												<div class="checkbox">
+													<label data-role="label_{{ size.slug }}" class="bx-filter-param-label " for="{{ size.slug }}"> <span class="bx-filter-input-checkbox"> <input type="checkbox" value="Y" name="{{ size.slug }}" id="{{ size.slug }}" onclick="smartFilter.click(this)" /> <span class="bx-filter-param-text" title="{{ size.title }}">{{ size.title }}</span> </span>
+													</label>
+												</div>
+												{% endfor %}
+											</div>
+										</div>
+										<div style="clear: both"></div>
+									</div>
+								</div>
+								<div class="col-lg-12 bx-filter-parameters-box "> <span class="bx-filter-container-modef"></span>
+									<div class="bx-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)"> <span class="bx-filter-parameters-box-hint">Цвет <i data-role="prop_angle" class="fa fa-angle-down"></i> </span> </div>
+									<div class="bx-filter-block" data-role="bx_filter_block">
+										<div class="row bx-filter-parameters-box-container">
+										{% for color in color_list %}
+											<div class="col-xs-12">
+												<div class="checkbox">
+													<label data-role="label_{{ color.slug }}" class="bx-filter-param-label " for="{{ color.slug }}"> <span class="bx-filter-input-checkbox"> <input type="checkbox" value="Y" name="{{ color.slug }}" id="{{ color.slug }}" onclick="smartFilter.click(this)" /> <span class="bx-filter-param-text" title="{{ color.title }}">{{ color.title }}</span> </span>
+													</label>
+												</div>
+											</div>
+										{% endfor %}
+										</div>
+										<div style="clear: both"></div>
+									</div>
+								</div>
+								<div class="col-lg-12 bx-filter-parameters-box bx-active"> <span class="bx-filter-container-modef"></span>
+									<div class="bx-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)"> <span class="bx-filter-parameters-box-hint">Новое поступление <i data-role="prop_angle" class="fa fa-angle-up"></i> </span> </div>
+									<div class="bx-filter-block" data-role="bx_filter_block">
+										<div class="row bx-filter-parameters-box-container">
+											<div class="col-xs-12">
+												<div class="checkbox">
+													<label data-role="label_newproducts" class="bx-filter-param-label " for="newproducts"> <span class="bx-filter-input-checkbox"> <input type="checkbox" value="Y" name="newproducts" id="newproducts" onclick="smartFilter.click(this)" /> <span class="bx-filter-param-text" title="Да">Да</span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<label data-role="label_oldproducts" class="bx-filter-param-label " for="oldproducts"> <span class="bx-filter-input-checkbox"> <input type="checkbox" value="Y" name="oldproducts" id="oldproducts" onclick="smartFilter.click(this)" /> <span class="bx-filter-param-text" title="Нет">Нет</span> </span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div style="clear: both"></div>
+									</div>
+								</div>
+								<div class="col-lg-12 bx-filter-parameters-box "> <span class="bx-filter-container-modef"></span>
+									<div class="bx-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)"> <span class="bx-filter-parameters-box-hint">Сезон <i data-role="prop_angle" class="fa fa-angle-down"></i> </span> </div>
+									<div class="bx-filter-block" data-role="bx_filter_block">
+										<div class="row bx-filter-parameters-box-container">
+											<div class="col-xs-12">
+												<div class="checkbox">
+													<label data-role="label_catalogFilter_41_2707236321" class="bx-filter-param-label " for="catalogFilter_41_2707236321"> <span class="bx-filter-input-checkbox"> <input type="checkbox" value="Y" name="catalogFilter_41_2707236321" id="catalogFilter_41_2707236321" onclick="smartFilter.click(this)" /> <span class="bx-filter-param-text" title="Весна">Весна</span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<label data-role="label_catalogFilter_41_3596227959" class="bx-filter-param-label " for="catalogFilter_41_3596227959"> <span class="bx-filter-input-checkbox"> <input type="checkbox" value="Y" name="catalogFilter_41_3596227959" id="catalogFilter_41_3596227959" onclick="smartFilter.click(this)" /> <span class="bx-filter-param-text" title="Демисезон">Демисезон</span> </span>
+													</label>
+												</div>
+												<div class="checkbox">
+													<label data-role="label_catalogFilter_41_4194326291" class="bx-filter-param-label " for="catalogFilter_41_4194326291"> <span class="bx-filter-input-checkbox"> <input type="checkbox" value="Y" name="catalogFilter_41_4194326291" id="catalogFilter_41_4194326291" onclick="smartFilter.click(this)" /> <span class="bx-filter-param-text" title="Лето">Лето</span> </span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div style="clear: both"></div>
+									</div>
+								</div>
+								<div class="col-lg-12 bx-filter-parameters-box bx-active"> <span class="bx-filter-container-modef"></span>
+									<div class="bx-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)"> <span class="bx-filter-parameters-box-hint">Цена <i data-role="prop_angle" class="fa fa-angle-up"></i> </span> </div>
+									<div class="bx-filter-block" data-role="bx_filter_block">
+										<div class="row bx-filter-parameters-box-container">
+											<div class="flex-row justify-content-between">
+												<div class="col-xs-6 bx-filter-parameters-box-container-block bx-left"> <i class="bx-ft-sub">От</i>
+													<div class="bx-filter-input-container">
+														<input class="min-price" type="text" name="catalogFilter_4_MIN" id="catalogFilter_4_MIN" value="" size="9" onkeyup="smartFilter.keyup(this)" /> </div>
+												</div>
+												<div class="col-xs-6 bx-filter-parameters-box-container-block bx-right"> <i class="bx-ft-sub">До</i>
+													<div class="bx-filter-input-container">
+														<input class="max-price" type="text" name="catalogFilter_4_MAX" id="catalogFilter_4_MAX" value="" size="9" onkeyup="smartFilter.keyup(this)" /> </div>
+												</div>
+											</div>
+											<div class="col-xs-10 col-xs-offset-1 bx-ui-slider-track-container">
+												<div class="bx-ui-slider-track" id="drag_track_4">
+													<div class="bx-ui-slider-part p1"><span>2250</span></div>
+													<div class="bx-ui-slider-part p2"><span>281688</span></div>
+													<div class="bx-ui-slider-part p3"><span>561125</span></div>
+													<div class="bx-ui-slider-part p4"><span>840563</span></div>
+													<div class="bx-ui-slider-part p5"><span>1120000</span></div>
+													<div class="bx-ui-slider-pricebar-vd" style="left: 0;right: 0;" id="colorUnavailableActive_4"></div>
+													<div class="bx-ui-slider-pricebar-vn" style="left: 0;right: 0;" id="colorAvailableInactive_4"></div>
+													<div class="bx-ui-slider-pricebar-v" style="left: 0;right: 0;" id="colorAvailableActive_4"></div>
+													<div class="bx-ui-slider-range" id="drag_tracker_4" style="left: 0;right: 0;">
+														<a class="bx-ui-slider-handle left" style="left:0;" href="javascript:void(0)" id="left_slider_4"></a>
+														<a class="bx-ui-slider-handle right" style="right:0;" href="javascript:void(0)" id="right_slider_4"></a>
+													</div>
+												</div>
+											</div>
+											<script type="text/javascript">
+											BX.ready(function() {
+												window['trackBar4'] = new BX.Iblock.SmartFilter({
+													'leftSlider': 'left_slider_4',
+													'rightSlider': 'right_slider_4',
+													'tracker': 'drag_tracker_4',
+													'trackerWrap': 'drag_track_4',
+													'minInputId': 'catalogFilter_4_MIN',
+													'maxInputId': 'catalogFilter_4_MAX',
+													'minPrice': '2250',
+													'maxPrice': '1120000',
+													'curMinPrice': '',
+													'curMaxPrice': '',
+													'fltMinPrice': '2250',
+													'fltMaxPrice': '1120000',
+													'precision': '0',
+													'colorUnavailableActive': 'colorUnavailableActive_4',
+													'colorAvailableActive': 'colorAvailableActive_4',
+													'colorAvailableInactive': 'colorAvailableInactive_4'
+												});
+											});
+											</script>
+										</div>
+										<div style="clear: both"></div>
+									</div>
+								</div>
+							</div>
+							<!--//row-->
+							<div class="row">
+								<div class="col-xs-12 bx-filter-button-box">
+									<div class="bx-filter-block">
+										<div class="bx-filter-parameters-box-container flex-row justify-content-around">
+											<input class="btn btn--primary btn--sm" type="submit" id="set_filter" name="set_filter" value="Показать" />
+											<input class="btn btn--secondary btn--sm" type="submit" id="del_filter" name="del_filter" value="Сбросить" />
+											<div class="bx-filter-popup-result left" id="modef" style="display:none" style="display: inline-block;"> Выбрано: <span id="modef_num">0</span> <span class="arrow"></span>
+												<br/> <a href="index.html%3Fset_filter=y.html" target="">Показать</a> </div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="clb"></div>
+						</form>
+					</div>
+				</div>
+				<script type="text/javascript">
+				var smartFilter = new JCSmartFilter('/catalog/', 'VERTICAL', []);
+				</script>
+			</div>
+			<div class="catalog-page__products">
+				<div class="catalog m-b-30 p-b-30">
+					<div class="container">
+						<div class="dropdown catalog__sections-select m-b-10 m-l-5">
+							<div class="dropdown__list"> <a class="dropdown__item" href="javascript:"> ВЫБОР КАТЕГОРИИ </a>
+								{% for item in types %}
+								<a class="dropdown__item" href="{% url 'subcatalog' item.slug %}"> <span>{{ item.title }}</span> </a>
+								{% endfor %}
+								<a class="dropdown__item" href="{% url 'catalog' %}"> <span><Назад</span> </a>
+							</div>
+						</div>
+						<div class="">
+							<div class="catalog__list">
+								{% for item, images in products %}
+								<div class="catalog__item" id="bx_3966226736_40779">
+									<div class="catalog__item-picSlider js-catalog-pic-slider">
+										{% for image in images %}
+										<a href="{% url 'product' item.slug %}" class="catalog__item-pic"> <img src="{{ image.image.url }}" alt=""> </a>
+										{% endfor %}
+									</div> <a href="{% url 'product' item.slug %}" class="catalog__item-name"> {{ item.brand }} </a>
+									<div class="catalog__item-desc">{{ item.title }}</div>
+									<a class="catalog__item-prices"> <span class="catalog__item-price"> {{ item.sale_price }} <span>₽</span> </span> <span class="catalog__item-old-price"> {{ item.price }} <span>₽</span> </span> <span class="catalog__item-sale"> ({{ item.sale }} <span>%</span>) </span>
+									</a> <a class="btn btn--primary catalog__item-btn" href="{% url 'product' item.slug %}">Купить</a> </div>
+								{% endfor %}
+							</div>
+						</div>
+						<script>
+						window.navPageCurrent = +'1';
+						window.navPageCount = +'176';
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}
